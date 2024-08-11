@@ -27,7 +27,7 @@ public interface CartRepository extends JpaRepository<CartItem, Long> {
     void removeItemFromUserCart(@NonNull long userId, @NonNull long productId);
 
     @Query("select c from CartItem c where c.userId = ?1 and c.isDeleted = false")
-    List<CartItem> getUserCartItems(@NonNull long userId);
+    List<CartItem> getUserCart(@NonNull long userId);
 
     CartItem findByUserIdAndProductIdAndIsDeletedFalse(@NonNull long userId, @NonNull long productId);
 
